@@ -4,8 +4,14 @@
 
 class FIFO{
 	private:
-		
+		int size;
+		bool empty;
+		Customer* top;	
 	public:
+		FIFO();
+		void Insert(Customer* cust);
+		Customer* GetTop();
+		bool isEmpty();
 	
 
 };

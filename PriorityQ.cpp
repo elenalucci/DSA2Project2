@@ -44,8 +44,10 @@ Customer* PriorityQ::GetTop(){
 	temp = top;
 
 	top = top->GetNextCust();
-	
+	temp->SetNextCust(nullptr);
+
 	numCust--;
+
 
 	return temp;
 	
