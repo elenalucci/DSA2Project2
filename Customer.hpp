@@ -6,6 +6,7 @@ class Customer{
 		float arrivalTime;
 		float startOfServiceTime;
 		float departureTime;
+		float PQTime;
 		Customer* nextCust;
 	
 	public:
@@ -15,10 +16,13 @@ class Customer{
 		void SetSOSTime(float startOfServiceTime);
 		void SetDepartureTime(float departureTime);
 		void SetNextCust(Customer* nextCust);
+		void SetPQTime(float PQTime);
 		float GetArrivalTime();
 		float GetSOSTime();
 		float GetDepartureTime();
-		Customer* GetNextCust(); 
+		float GetPQTime();
+		Customer* GetNextCust();
+	   		
 
 };
 
