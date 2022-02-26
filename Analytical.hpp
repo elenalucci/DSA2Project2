@@ -1,3 +1,4 @@
+//Elena Lucci Project 2 
 #ifndef Analytical_hpp
 #define Analytical_hpp
 

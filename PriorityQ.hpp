@@ -1,3 +1,4 @@
+//Elena Lucci Project2
 #ifndef PriorityQ_hpp
 #define PriorityQ_hpp
 #include "Customer.hpp"
@@ -13,7 +14,7 @@ class PriorityQ{
 		PriorityQ();
 		void Insert(Customer* cust,float PQTime);
 		Customer* GetTop();
+		int GetNumCust();
 		bool isEmpty();
-
 };
 #endif

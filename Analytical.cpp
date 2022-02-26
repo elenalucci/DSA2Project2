@@ -1,6 +1,8 @@
+//Elena Lucci Project 2
 #include "Analytical.hpp"
 #include <iostream>
 #include <cmath>
+//Default Constructor
 Analytical::Analytical(){
 	n = 0;
 	lambda = 0.0;
@@ -13,23 +15,23 @@ Analytical::Analytical(){
 	Wq = 0.0;
 	rho = 0.0;
 }
-
+//Sets number of customers
 void Analytical::SetN(int n){
 	this->n = n;
 }
-
+//Sets lambda
 void Analytical::SetLambda(double lambda){
 	this->lambda = lambda;
 }
-
+//Sets Mu
 void Analytical::SetMu(double mu){
 	this->mu = mu;
 }
-
+//Sets M
 void Analytical::SetM(int M){
 	this->M = M;
 }
-
+//Calculates percent idle time
 double Analytical::CalculatePo(){
 	
 	long double E = 0.0;
@@ -56,7 +58,7 @@ double Analytical::CalculatePo(){
 
 	return Po;
 }
-
+//Calculates average number of people in the system
 double Analytical::CalculateL(){
 	
 	long double mFac = 1.0;
@@ -70,28 +72,28 @@ double Analytical::CalculateL(){
 
 	return L;
 }
-
+//Calculates average time a customer spends in the system
 double Analytical::CalculateW(){
 	
 	W = L/lambda;
 
 	return W;
 }
-
+//calculates average numbers of customers in the queue
 double Analytical::CalculateLq(){
 	
 	Lq = L - (lambda/mu);	
 
 	return Lq;
 }
-
+//Calculates average time a customer spends waiting in queue
 double Analytical::CalculateWq(){
 
 	Wq = Lq / lambda;
 
 	return Wq;
 }
-
+//Calculates utilization factor
 double Analytical::CalculateRho(){
 
 	rho = lambda / (M*mu);

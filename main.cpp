@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include "Analytical.hpp"
+#include "Simulation.hpp"
 
 int main(){
 	
@@ -9,6 +10,7 @@ int main(){
 	double mu;
 	int M;
 	Analytical a;	
+	Simulation s;
 
 	std::cout << "Enter number of arrivals: ";
 	std::cin >> n;
@@ -34,6 +36,18 @@ int main(){
 	std::cout << "Lq = " << std::setprecision(2) << a.CalculateLq() << std::endl;
 	std::cout << "Wq = " << std::setprecision(3) << a.CalculateWq() << std::endl;	
 	std::cout << "Rho = " << a.CalculateRho() << std::endl;	
+
+	s.SetTotalServiceAvail(M);
+	s.SetNumCust(n);
+	s.SetLambda(lambda);
+	s.SetMu(mu);
+	s.RunSimulation();
 	
+
+	std::cout << "Simulation: " << std::endl;
+	std::cout << "Po = " << std::endl;
+	std::cout << "W = " << std::endl;
+	std::cout << "Wq = " << std::endl;
+	std::cout << "Rho = " << std::endl;
 	return 0;
 }
